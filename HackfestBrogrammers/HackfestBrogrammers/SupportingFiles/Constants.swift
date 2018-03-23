@@ -27,28 +27,18 @@ struct Constants {
         return Static.instance
     }
     
-    func setLanguage() {
-        Constants.lang = DataManager.shared.getLanguage()
-        Network.ErrorMessage.init()
-        StartingPage.init()
-        Registration.init()
-        Stories.init()
-        //MainPage.init()
-    }
-    
-    
     struct Network {
         
         struct ErrorMessage {
-            static var NO_INTERNET_CONNECTION = "no_internet_connection".localized(lang: "ru")
-            static var UNABLE_LOAD_DATA = "unable_load_data".localized(lang: "ru")
+            static var NO_INTERNET_CONNECTION = "no_internet_connection"
+            static var UNABLE_LOAD_DATA = "unable_load_data"
             static let NO_HTTP_STATUS_CODE = "Unable to get response HTTP status code"
-            static var UNAUTHORIZED = "unauthorized".localized(lang: "ru")
+            static var UNAUTHORIZED = "unauthorized"
             
             init() {
-                Network.ErrorMessage.NO_INTERNET_CONNECTION = "no_internet_connection".localized(lang: lang!)
-                Network.ErrorMessage.UNABLE_LOAD_DATA = "unable_load_data".localized(lang: lang!)
-                Network.ErrorMessage.UNAUTHORIZED = "unauthorized".localized(lang: lang!)
+                Network.ErrorMessage.NO_INTERNET_CONNECTION = "no_internet_connection"
+                Network.ErrorMessage.UNABLE_LOAD_DATA = "unable_load_data"
+                Network.ErrorMessage.UNAUTHORIZED = "unauthorized"
             }
         }
         
@@ -73,93 +63,9 @@ struct Constants {
             static let BeetPoint = "api/beet-point"
             static let ChangePassword = "api/user/change-password"
             static let RegisterToken = "api/user/register-token"
-            
         }
     }
-    
-    
-    struct StartingPage {
-        static var directory = [String]()
-        static var wheretogo = [String]()
-        static var map = [String]()
-        static var sms = [String]()
-        static var nosilence = [String]()
-        init ()
-        {
-            StartingPage.directory = ["directory".localized(lang: lang!)!,"about_description1".localized(lang: lang!)!]
-            StartingPage.wheretogo = ["wheretogo".localized(lang: lang!)!, "about_description2".localized(lang: lang!)!]
-            StartingPage.map = ["map".localized(lang: lang!)!, "about_description3".localized(lang: lang!)!]
-            StartingPage.sms = ["sms".localized(lang: lang!)!, "about_description4".localized(lang: lang!)!]
-            StartingPage.nosilence = ["nosilence".localized(lang: lang!)!, "about_description5".localized(lang: lang!)!]
-        }
-    }
-    
-    struct Registration {
-        static var save: String?
-        static var contactsLabel: String?
-        static var sosSmsLabel: String?
-        static var smsPlaceholder: String?
-        let lang: String = DataManager.shared.getLanguage()
-        init() {
-            Registration.save = "save".localized(lang: self.lang)
-            Registration.contactsLabel = "contactsLabel".localized(lang: self.lang)
-            Registration.sosSmsLabel = "sosSmsLabel".localized(lang: self.lang)
-            Registration.smsPlaceholder = "smsPlaceholder".localized(lang: self.lang)
-        }
-    }
-    
-    struct Stories {
-        static var addStoryLabel: String?
-         static var addStoryPlaceholder: String?
-        static var addNumberLabel: String?
-        static var addStoryButton: String?
-        
-        init() {
-            Stories.addStoryLabel = "add_story_label".localized(lang: lang!)
-            Stories.addStoryPlaceholder = "add_story_placeholder".localized(lang: lang!)
-            Stories.addNumberLabel = "add_number_label".localized(lang: lang!)
-            Stories.addStoryButton = "add_story_button".localized(lang: lang!)
-        }
-    }
-    
-//    struct MainPage {
-//        static var mainmenu: String?
-//
-//        static var names: [String] {
-//
-//            let lang = DataManager.shared.getLanguage()
-//             MainPage.mainmenu = "mainmenu".localized(lang: lang)
-//            return = ["first_cell".localized(lang: lang)!,
-//                              "second_cell".localized(lang: lang)!,
-//                              "third_cell".localized(lang: lang)!,
-//                              "fourth_cell".localized(lang: lang)!,
-//                              "fifth_cell".localized(lang: lang)!,
-//                              "sixth_cell".localized(lang: lang)!]
-//        }
-//        init() {}
-//    }
-
 }
 
-
-struct Translation {
-    
-    static var mainMenu: String {
-        let lang = DataManager.shared.getLanguage()
-        return "mainmenu".localized(lang: lang)!
-    }
-    
-    static var menuNames: [String] {
-        let lang: String = DataManager.shared.getLanguage()
-        return  ["first_cell".localized(lang: lang)!,
-        "second_cell".localized(lang: lang)!,
-        "third_cell".localized(lang: lang)!,
-        "fourth_cell".localized(lang: lang)!,
-        "fifth_cell".localized(lang: lang)!,
-        "sixth_cell".localized(lang: lang)!]
-    }
-    
-    
-}
 
 

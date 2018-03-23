@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D63A06AC1293FD6C94EA514 /* Pods_HackfestBrogrammers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0756AA59E249F9B273C86E79 /* Pods_HackfestBrogrammers.framework */; };
 		84AA1A5320659FBB001FCE47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A5220659FBB001FCE47 /* AppDelegate.swift */; };
 		84AA1A5520659FBB001FCE47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A5420659FBB001FCE47 /* ViewController.swift */; };
 		84AA1A5820659FBB001FCE47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AA1A5620659FBB001FCE47 /* Main.storyboard */; };
 		84AA1A5A20659FBB001FCE47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AA1A5920659FBB001FCE47 /* Assets.xcassets */; };
 		84AA1A5D20659FBB001FCE47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AA1A5B20659FBB001FCE47 /* LaunchScreen.storyboard */; };
+		84AA1A6B2065A105001FCE47 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A652065A104001FCE47 /* Constants.swift */; };
+		84AA1A6C2065A105001FCE47 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A662065A104001FCE47 /* HTTPStatusCode.swift */; };
+		84AA1A6D2065A105001FCE47 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A672065A105001FCE47 /* ServerManager.swift */; };
+		84AA1A6E2065A105001FCE47 /* HTTPRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A682065A105001FCE47 /* HTTPRequestManager.swift */; };
+		84AA1A6F2065A105001FCE47 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A692065A105001FCE47 /* DataManager.swift */; };
+		84AA1A702065A105001FCE47 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A6A2065A105001FCE47 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0756AA59E249F9B273C86E79 /* Pods_HackfestBrogrammers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackfestBrogrammers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B4DBCD2DF111272C7F0D00F /* Pods-HackfestBrogrammers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackfestBrogrammers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackfestBrogrammers/Pods-HackfestBrogrammers.debug.xcconfig"; sourceTree = "<group>"; };
+		7D152CF51A7139F88791F807 /* Pods-HackfestBrogrammers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackfestBrogrammers.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackfestBrogrammers/Pods-HackfestBrogrammers.release.xcconfig"; sourceTree = "<group>"; };
 		84AA1A4F20659FBB001FCE47 /* HackfestBrogrammers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackfestBrogrammers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AA1A5220659FBB001FCE47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84AA1A5420659FBB001FCE47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +32,12 @@
 		84AA1A5920659FBB001FCE47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84AA1A5C20659FBB001FCE47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84AA1A5E20659FBB001FCE47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84AA1A652065A104001FCE47 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		84AA1A662065A104001FCE47 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
+		84AA1A672065A105001FCE47 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		84AA1A682065A105001FCE47 /* HTTPRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestManager.swift; sourceTree = "<group>"; };
+		84AA1A692065A105001FCE47 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		84AA1A6A2065A105001FCE47 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D63A06AC1293FD6C94EA514 /* Pods_HackfestBrogrammers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6ED8F4CAD072C76123CE5468 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0756AA59E249F9B273C86E79 /* Pods_HackfestBrogrammers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84AA1A4620659FBA001FCE47 = {
 			isa = PBXGroup;
 			children = (
 				84AA1A5120659FBB001FCE47 /* HackfestBrogrammers */,
 				84AA1A5020659FBB001FCE47 /* Products */,
+				F423AC771C7B2DDCAB40EA4C /* Pods */,
+				6ED8F4CAD072C76123CE5468 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +81,7 @@
 		84AA1A5120659FBB001FCE47 /* HackfestBrogrammers */ = {
 			isa = PBXGroup;
 			children = (
+				84AA1A642065A028001FCE47 /* SupportingFiles */,
 				84AA1A5220659FBB001FCE47 /* AppDelegate.swift */,
 				84AA1A5420659FBB001FCE47 /* ViewController.swift */,
 				84AA1A5620659FBB001FCE47 /* Main.storyboard */,
@@ -64,6 +92,28 @@
 			path = HackfestBrogrammers;
 			sourceTree = "<group>";
 		};
+		84AA1A642065A028001FCE47 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				84AA1A652065A104001FCE47 /* Constants.swift */,
+				84AA1A692065A105001FCE47 /* DataManager.swift */,
+				84AA1A6A2065A105001FCE47 /* Extensions.swift */,
+				84AA1A682065A105001FCE47 /* HTTPRequestManager.swift */,
+				84AA1A662065A104001FCE47 /* HTTPStatusCode.swift */,
+				84AA1A672065A105001FCE47 /* ServerManager.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		F423AC771C7B2DDCAB40EA4C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B4DBCD2DF111272C7F0D00F /* Pods-HackfestBrogrammers.debug.xcconfig */,
+				7D152CF51A7139F88791F807 /* Pods-HackfestBrogrammers.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +121,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84AA1A6120659FBB001FCE47 /* Build configuration list for PBXNativeTarget "HackfestBrogrammers" */;
 			buildPhases = (
+				859190E17C08F3604937119B /* [CP] Check Pods Manifest.lock */,
 				84AA1A4B20659FBA001FCE47 /* Sources */,
 				84AA1A4C20659FBA001FCE47 /* Frameworks */,
 				84AA1A4D20659FBA001FCE47 /* Resources */,
+				77D65B839F4B4AE75A057B29 /* [CP] Embed Pods Frameworks */,
+				8DF63743A47FEDC831D3FA84 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +184,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		77D65B839F4B4AE75A057B29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HackfestBrogrammers/Pods-HackfestBrogrammers-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackfestBrogrammers/Pods-HackfestBrogrammers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		859190E17C08F3604937119B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackfestBrogrammers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DF63743A47FEDC831D3FA84 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackfestBrogrammers/Pods-HackfestBrogrammers-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84AA1A4B20659FBA001FCE47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84AA1A6D2065A105001FCE47 /* ServerManager.swift in Sources */,
 				84AA1A5520659FBB001FCE47 /* ViewController.swift in Sources */,
 				84AA1A5320659FBB001FCE47 /* AppDelegate.swift in Sources */,
+				84AA1A702065A105001FCE47 /* Extensions.swift in Sources */,
+				84AA1A6F2065A105001FCE47 /* DataManager.swift in Sources */,
+				84AA1A6C2065A105001FCE47 /* HTTPStatusCode.swift in Sources */,
+				84AA1A6B2065A105001FCE47 /* Constants.swift in Sources */,
+				84AA1A6E2065A105001FCE47 /* HTTPRequestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,14 +393,17 @@
 		};
 		84AA1A6220659FBB001FCE47 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B4DBCD2DF111272C7F0D00F /* Pods-HackfestBrogrammers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E3ZV847C68;
+				DEVELOPMENT_TEAM = U5DCDBG2W2;
 				INFOPLIST_FILE = HackfestBrogrammers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.neobis.HackfestBrogrammers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -287,14 +411,17 @@
 		};
 		84AA1A6320659FBB001FCE47 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D152CF51A7139F88791F807 /* Pods-HackfestBrogrammers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E3ZV847C68;
+				DEVELOPMENT_TEAM = U5DCDBG2W2;
 				INFOPLIST_FILE = HackfestBrogrammers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.neobis.HackfestBrogrammers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

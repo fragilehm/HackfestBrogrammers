@@ -18,7 +18,6 @@ class HTTPRequestManager {
     typealias Parameter = [String: Any]?
     
     let url = "http://165.227.147.84/"
-//    let url = "http://46.101.122.203:3000/"
     
     private func request(method: HTTPMethod, api: String, parameters: Parameter, header: String, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         
@@ -33,12 +32,6 @@ class HTTPRequestManager {
         var head: HTTPHeaders = [:]
         
         
-        if let lang = UserDefaults.standard.string(forKey: "language") {
-             head.updateValue(lang, forKey: "language")
-        } else {
-            head.updateValue("ru", forKey: "language")
-        }
-        
         Alamofire.request(APIaddress!, method: method, parameters: parameters, encoding: JSONEncoding.default , headers: head).responseJSON { (response:DataResponse<Any>) in
             
             guard response.response != nil else {
@@ -50,19 +43,7 @@ class HTTPRequestManager {
                 error("Не удалось получить код статуса HTTP")
                 return
             }
-          
-//            if response.result.isFailure {
-//                if (response.error != nil) {
-//                    if let description = response.error?.localizedDescription  {
-//                        error(description)
-//                    }
-//                    
-//                } else {
-//                    error("Не удалось загрузить данные. Вероятно, соединение с Интернетом прервано.")
-//                }
-//                return
-//            }
-            
+
             
             print("\(statusCode) - \(api)")
             
@@ -73,33 +54,44 @@ class HTTPRequestManager {
             case HttpStatusCode.ok.statusCode,
                  HttpStatusCode.accepted.statusCode,
                  HttpStatusCode.created.statusCode:
-                let json = JSON(data: response.data!)
-                if json["error"].stringValue.isEmpty {
-                    completion(JSON(data: response.data!))
-                    break;
+                do {
+                    let json = try JSON(data: response.data!)
+                    if json["error"].stringValue.isEmpty {
+                        completion(json)
+                        break;
+                    }
+                    error(json["error"].stringValue)
+                    //print(json)
+                } catch {
+                    print(error)
+                    // or display a dialog
                 }
-                error(json["error"].stringValue)
+                
                 break
             default:
-                
-                let json = JSON(data: response.data!)
-                if !json.isEmpty {
-                    print(json)
-                    let message = json["error"].stringValue
-                    if  message != ""
-                    {
-                        error(message)
+                do {
+                    let json = try JSON(data: response.data!)
+                    if !json.isEmpty {
+                        print(json)
+                        let message = json["error"].stringValue
+                        if  message != ""
+                        {
+                            error(message)
+                        } else {
+                            error("Неизвестная ошибка")
+                        }
                     } else {
-                        error("Неизвестная ошибка")
+                        if let data = response.data {
+                            let json = String(data: data, encoding: String.Encoding.utf8)
+                            error(json!)
+                        } else {
+                            error("")
+                        }
                     }
-                } else {
-                    if let data = response.data {
-                        let json = String(data: data, encoding: String.Encoding.utf8)
-                        error(json!)
-                    } else {
-                        error("")
-                    }
+                } catch {
+                    print(error)
                 }
+                
             }
         }
     }
