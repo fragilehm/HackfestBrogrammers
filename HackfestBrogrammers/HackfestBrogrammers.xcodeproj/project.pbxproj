@@ -32,6 +32,9 @@
 		84AA1A962065A76F001FCE47 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A952065A76F001FCE47 /* SettingsViewController.swift */; };
 		84AA1A992065A78A001FCE47 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AA1A982065A78A001FCE47 /* Profile.storyboard */; };
 		84AA1A9C2065A79B001FCE47 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A9B2065A79B001FCE47 /* ProfileViewController.swift */; };
+		84AA1A9F2065A8AD001FCE47 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A9E2065A8AD001FCE47 /* User.swift */; };
+		84AA1AA12065AAC8001FCE47 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1AA02065AAC8001FCE47 /* Contact.swift */; };
+		84AA1AA32065AAF5001FCE47 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1AA22065AAF5001FCE47 /* Address.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		84AA1A952065A76F001FCE47 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84AA1A982065A78A001FCE47 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		84AA1A9B2065A79B001FCE47 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		84AA1A9E2065A8AD001FCE47 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		84AA1AA02065AAC8001FCE47 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		84AA1AA22065AAF5001FCE47 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		84AA1A5120659FBB001FCE47 /* HackfestBrogrammers */ = {
 			isa = PBXGroup;
 			children = (
+				84AA1A9D2065A894001FCE47 /* Models */,
 				84AA1A972065A780001FCE47 /* Profile */,
 				84AA1A912065A751001FCE47 /* Settings */,
 				84AA1A8B2065A727001FCE47 /* Map */,
@@ -254,6 +261,16 @@
 				84AA1A9B2065A79B001FCE47 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84AA1A9D2065A894001FCE47 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84AA1A9E2065A8AD001FCE47 /* User.swift */,
+				84AA1AA02065AAC8001FCE47 /* Contact.swift */,
+				84AA1AA22065AAF5001FCE47 /* Address.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F423AC771C7B2DDCAB40EA4C /* Pods */ = {
@@ -408,10 +425,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84AA1AA32065AAF5001FCE47 /* Address.swift in Sources */,
 				84AA1A762065A5A2001FCE47 /* LoginViewController.swift in Sources */,
 				84AA1A842065A6AE001FCE47 /* MainViewController.swift in Sources */,
+				84AA1AA12065AAC8001FCE47 /* Contact.swift in Sources */,
 				84AA1A6D2065A105001FCE47 /* ServerManager.swift in Sources */,
 				84AA1A5520659FBB001FCE47 /* ViewController.swift in Sources */,
+				84AA1A9F2065A8AD001FCE47 /* User.swift in Sources */,
 				84AA1A8A2065A71F001FCE47 /* CategoryViewController.swift in Sources */,
 				84AA1A5320659FBB001FCE47 /* AppDelegate.swift in Sources */,
 				84AA1A902065A744001FCE47 /* MapViewController.swift in Sources */,
