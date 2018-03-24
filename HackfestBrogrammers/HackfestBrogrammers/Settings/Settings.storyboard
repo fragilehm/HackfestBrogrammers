@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,6 +56,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J5T-Yq-2PO">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="23M-lt-6Pj" id="MeH-SH-cWv"/>
+                                    <outlet property="delegate" destination="23M-lt-6Pj" id="cZg-lH-WmQ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -73,6 +78,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4h5-1H-k00" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="761" y="34"/>
+        </scene>
+        <!--Adding Story View Controller-->
+        <scene sceneID="ZMk-xO-7qM">
+            <objects>
+                <viewController storyboardIdentifier="AddingStoryViewController" id="dtf-b7-RqW" customClass="AddingStoryViewController" customModule="HackfestBrogrammers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uBX-u1-QHG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRl-yV-Xm5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавьте историю или отзыв. Другие пользователи имеют доступ к списку ваших историй. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dL3-17-a4Z">
+                                        <rect key="frame" x="12" y="12" width="351" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0wC-BG-uqs">
+                                        <rect key="frame" x="12" y="78" width="351" height="200"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="hlr-KN-VMR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caT-FE-AFY">
+                                        <rect key="frame" x="93.5" y="302" width="187.5" height="30"/>
+                                        <color key="backgroundColor" red="0.2666666667" green="0.75686274509999996" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Сохранить">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dL3-17-a4Z" firstAttribute="top" secondItem="cRl-yV-Xm5" secondAttribute="top" constant="12" id="10P-Np-wI0"/>
+                                    <constraint firstItem="0wC-BG-uqs" firstAttribute="top" secondItem="dL3-17-a4Z" secondAttribute="bottom" constant="12" id="1T2-Oq-JsS"/>
+                                    <constraint firstItem="0wC-BG-uqs" firstAttribute="centerX" secondItem="cRl-yV-Xm5" secondAttribute="centerX" id="35D-w8-79A"/>
+                                    <constraint firstItem="caT-FE-AFY" firstAttribute="top" secondItem="0wC-BG-uqs" secondAttribute="bottom" constant="24" id="7sZ-1P-WvW"/>
+                                    <constraint firstAttribute="bottom" secondItem="caT-FE-AFY" secondAttribute="bottom" constant="200" id="EMH-3D-X4G"/>
+                                    <constraint firstItem="caT-FE-AFY" firstAttribute="centerX" secondItem="cRl-yV-Xm5" secondAttribute="centerX" id="O8q-Tb-d8X"/>
+                                    <constraint firstItem="caT-FE-AFY" firstAttribute="width" secondItem="cRl-yV-Xm5" secondAttribute="width" multiplier="1:2" id="RzH-dj-upi"/>
+                                    <constraint firstAttribute="trailing" secondItem="dL3-17-a4Z" secondAttribute="trailing" constant="12" id="YPK-S4-hYT"/>
+                                    <constraint firstAttribute="trailing" secondItem="0wC-BG-uqs" secondAttribute="trailing" constant="12" id="ZEx-oB-D0h"/>
+                                    <constraint firstItem="dL3-17-a4Z" firstAttribute="leading" secondItem="cRl-yV-Xm5" secondAttribute="leading" constant="12" id="fyq-ig-S8o"/>
+                                    <constraint firstItem="0wC-BG-uqs" firstAttribute="leading" secondItem="cRl-yV-Xm5" secondAttribute="leading" constant="12" id="qSN-Dy-0rl"/>
+                                    <constraint firstItem="dL3-17-a4Z" firstAttribute="centerX" secondItem="cRl-yV-Xm5" secondAttribute="centerX" id="xrg-g6-Vw5"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cRl-yV-Xm5" firstAttribute="top" secondItem="eOG-ZC-c6M" secondAttribute="top" id="AZV-dW-hvz"/>
+                            <constraint firstItem="cRl-yV-Xm5" firstAttribute="leading" secondItem="eOG-ZC-c6M" secondAttribute="leading" id="Fy9-KJ-Zag"/>
+                            <constraint firstItem="eOG-ZC-c6M" firstAttribute="bottom" secondItem="cRl-yV-Xm5" secondAttribute="bottom" id="jEu-vY-416"/>
+                            <constraint firstItem="eOG-ZC-c6M" firstAttribute="trailing" secondItem="cRl-yV-Xm5" secondAttribute="trailing" id="waM-vX-SE4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eOG-ZC-c6M"/>
+                    </view>
+                    <connections>
+                        <outlet property="storyTextView" destination="0wC-BG-uqs" id="SEi-SP-9nN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QaD-hj-QOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="778"/>
         </scene>
         <!--Language View Controller-->
         <scene sceneID="L0B-5p-Ahq">

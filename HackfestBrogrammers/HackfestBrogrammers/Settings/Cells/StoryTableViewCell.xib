@@ -13,21 +13,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="177" id="KGk-i7-Jjw" customClass="StoryTableViewCell" customModule="HackfestBrogrammers" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="177"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="187" id="KGk-i7-Jjw" customClass="StoryTableViewCell" customModule="HackfestBrogrammers" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="187"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="176.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="376" height="186.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="23.08.2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAR-02-W0p">
-                        <rect key="frame" x="319" y="23" width="73" height="21"/>
+                        <rect key="frame" x="299" y="114.5" width="73" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7l8-JX-lrI">
-                        <rect key="frame" x="12" y="52" width="376" height="21"/>
+                        <rect key="frame" x="12" y="143.5" width="352" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                     <constraint firstItem="NAR-02-W0p" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="12" id="3gL-Q3-koh"/>
                     <constraint firstItem="7l8-JX-lrI" firstAttribute="top" secondItem="NAR-02-W0p" secondAttribute="bottom" constant="12" id="hFC-yf-chc"/>
                     <constraint firstAttribute="trailing" secondItem="7l8-JX-lrI" secondAttribute="trailing" constant="12" id="hMG-nn-1IQ"/>
-                    <constraint firstItem="NAR-02-W0p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" id="zxR-hF-I4K"/>
+                    <constraint firstItem="NAR-02-W0p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="rZJ-ck-gfb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -47,7 +47,7 @@
                 <outlet property="descriptionLabel" destination="7l8-JX-lrI" id="1Ze-Yt-Ega"/>
                 <outlet property="lastUpdateLabel" destination="NAR-02-W0p" id="lon-9x-qII"/>
             </connections>
-            <point key="canvasLocation" x="102" y="124.5"/>
+            <point key="canvasLocation" x="90" y="183.5"/>
         </tableViewCell>
     </objects>
 </document>
