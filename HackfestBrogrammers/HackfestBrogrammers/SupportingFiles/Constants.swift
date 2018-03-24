@@ -65,6 +65,11 @@ struct Constants {
             static let RegisterToken = "api/user/register-token"
         }
     }
+    struct Settings {
+        static let SettingsName = ["Добавить историю", "Выбрать язык"]
+        static let SettingsImageName = ["language", "story"]
+        static let SettingsTitle = ["Профиль", "Настройки", ""]
+    }
 }
 
 

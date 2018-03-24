@@ -1,38 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLv-HS-TSJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="ru1-U9-JVy">
             <objects>
-                <viewController id="khe-O1-7Sw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="khe-O1-7Sw" customClass="MainViewController" customModule="HackfestBrogrammers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V9C-P8-5zB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Main" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5K-ds-PbB">
-                                <rect key="frame" x="166" y="276" width="37" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKq-1v-TmI">
+                                <rect key="frame" x="62" y="594.5" width="250" height="52.5"/>
+                                <color key="backgroundColor" red="0.26666666666666666" green="0.75686274509803919" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Добавить">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addPressed:" destination="khe-O1-7Sw" eventType="touchUpInside" id="90x-d9-CqN"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n7n-UD-jWQ">
+                                <rect key="frame" x="62.5" y="250" width="250" height="167"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhV-4c-jRm">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="78.5"/>
+                                        <color key="backgroundColor" red="1" green="0.31764705879999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Нуждаюсь в помощи">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="needPressed:" destination="khe-O1-7Sw" eventType="touchUpInside" id="RfC-1Q-ewV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcP-Nu-vT6">
+                                        <rect key="frame" x="0.0" y="88.5" width="250" height="78.5"/>
+                                        <color key="backgroundColor" red="1" green="0.31764705879999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Хочу помочь">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="wantPressed:" destination="khe-O1-7Sw" eventType="touchUpInside" id="QAw-7h-Gck"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iKq-1v-TmI" firstAttribute="height" secondItem="vcP-Nu-vT6" secondAttribute="height" multiplier="2:3" id="5QD-Gs-IQp"/>
+                            <constraint firstItem="n7n-UD-jWQ" firstAttribute="centerX" secondItem="V9C-P8-5zB" secondAttribute="centerX" id="7bA-cj-1xm"/>
+                            <constraint firstItem="Nsd-uI-eY2" firstAttribute="bottom" secondItem="iKq-1v-TmI" secondAttribute="bottom" constant="20" id="JqW-zh-ifP"/>
+                            <constraint firstItem="n7n-UD-jWQ" firstAttribute="centerY" secondItem="V9C-P8-5zB" secondAttribute="centerY" id="PBf-qP-otx"/>
+                            <constraint firstItem="n7n-UD-jWQ" firstAttribute="width" secondItem="V9C-P8-5zB" secondAttribute="width" multiplier="2:3" id="guV-Yr-DuQ"/>
+                            <constraint firstItem="iKq-1v-TmI" firstAttribute="centerX" secondItem="V9C-P8-5zB" secondAttribute="centerX" id="mCT-c5-sDe"/>
+                            <constraint firstItem="iKq-1v-TmI" firstAttribute="width" secondItem="V9C-P8-5zB" secondAttribute="width" multiplier="2:3" id="meV-Dz-ehH"/>
+                            <constraint firstItem="n7n-UD-jWQ" firstAttribute="height" secondItem="V9C-P8-5zB" secondAttribute="height" multiplier="1:4" id="tQB-Y7-tIY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Nsd-uI-eY2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hea-Vi-wT8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fey-oL-Ue9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="167.76611694152925"/>
+            <point key="canvasLocation" x="393" y="168"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jiS-2a-VbH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cLv-HS-TSJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y3e-nW-rWv">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="khe-O1-7Sw" kind="relationship" relationship="rootViewController" id="FII-Xb-QF4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OaA-ww-vaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-383" y="168"/>
         </scene>
     </scenes>
 </document>

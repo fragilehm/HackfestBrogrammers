@@ -1,7 +1,105 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="Z6x-Tn-jaf">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="BRc-rC-jJW" customClass="SettingsViewController" customModule="HackfestBrogrammers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JHv-jA-x3p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="GYd-Xj-wz4">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BRc-rC-jJW" id="bx4-5d-Dam"/>
+                                    <outlet property="delegate" destination="BRc-rC-jJW" id="jG3-F8-DYN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="64G-vk-qtU" firstAttribute="trailing" secondItem="GYd-Xj-wz4" secondAttribute="trailing" id="8Mv-xa-i3T"/>
+                            <constraint firstItem="GYd-Xj-wz4" firstAttribute="leading" secondItem="64G-vk-qtU" secondAttribute="leading" id="DaZ-Iu-nnW"/>
+                            <constraint firstItem="GYd-Xj-wz4" firstAttribute="top" secondItem="64G-vk-qtU" secondAttribute="top" id="Wtw-A8-TMj"/>
+                            <constraint firstItem="64G-vk-qtU" firstAttribute="bottom" secondItem="GYd-Xj-wz4" secondAttribute="bottom" id="nY6-h8-2dR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="64G-vk-qtU"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="GYd-Xj-wz4" id="vwq-sv-EQJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kCu-K6-Twy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="34"/>
+        </scene>
+        <!--Add Story View Controller-->
+        <scene sceneID="1Bc-ck-wtt">
+            <objects>
+                <viewController storyboardIdentifier="AddStoryViewController" id="23M-lt-6Pj" customClass="AddStoryViewController" customModule="HackfestBrogrammers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ae8-F2-b90">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J5T-Yq-2PO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J5T-Yq-2PO" firstAttribute="top" secondItem="V33-77-O8X" secondAttribute="top" id="2O3-Bq-Rmz"/>
+                            <constraint firstItem="V33-77-O8X" firstAttribute="trailing" secondItem="J5T-Yq-2PO" secondAttribute="trailing" id="JxA-ms-Sfh"/>
+                            <constraint firstItem="J5T-Yq-2PO" firstAttribute="leading" secondItem="V33-77-O8X" secondAttribute="leading" id="L8Y-wE-EXo"/>
+                            <constraint firstItem="V33-77-O8X" firstAttribute="bottom" secondItem="J5T-Yq-2PO" secondAttribute="bottom" id="Y65-c2-MxQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V33-77-O8X"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="J5T-Yq-2PO" id="mG0-Pa-03L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4h5-1H-k00" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="761" y="34"/>
+        </scene>
+        <!--Language View Controller-->
+        <scene sceneID="L0B-5p-Ahq">
+            <objects>
+                <viewController storyboardIdentifier="LanguageViewController" id="Qor-wO-uy0" customClass="LanguageViewController" customModule="HackfestBrogrammers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bVs-F4-aGi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9p-RF-Ekz">
+                                <rect key="frame" x="28" y="225" width="320" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r9p-RF-Ekz" firstAttribute="centerY" secondItem="bVs-F4-aGi" secondAttribute="centerY" id="1Z6-WZ-FEt"/>
+                            <constraint firstItem="r9p-RF-Ekz" firstAttribute="centerX" secondItem="bVs-F4-aGi" secondAttribute="centerX" id="qRI-ZG-aJp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qLq-Yk-BE1"/>
+                    </view>
+                    <connections>
+                        <outlet property="languagePickerView" destination="r9p-RF-Ekz" id="tis-VW-LMW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LeE-GP-dlu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562" y="34"/>
+        </scene>
+    </scenes>
 </document>
