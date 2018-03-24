@@ -16,6 +16,11 @@ class SettingsViewController: UIViewController {
         configureTableView()
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "Настройки"
+    }
+
     func configureTableView() {
         tableView.tableFooterView = UIView()
         tableView.register(UINib.init(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileTableViewCell")
@@ -87,7 +92,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 let storyboard = UIStoryboard.init(name: "Settings", bundle: nil)
-                let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileViewController")
+                let profileVC = storyboard.instantiateViewController(withIdentifier: "AddStoryViewController")
                 self.navigationController?.show(profileVC, sender: self)
             }
             else {
@@ -97,7 +102,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         else {
-            
+            let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            self.navigationController?.show(loginVC, sender: self)
         }
     }
 }

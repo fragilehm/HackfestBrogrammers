@@ -17,6 +17,10 @@ class LanguageViewController: UIViewController {
         languagePickerView.delegate = self
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "Выбор языка"
+    }
 }
 extension LanguageViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -51,6 +51,7 @@
 		84CD028920665E4D0008A8C0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CD028820665E4D0008A8C0 /* Colors.swift */; };
 		84CD028B2066618C0008A8C0 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A95F5DD2065E6C6005703EB /* RegistrationViewController.swift */; };
 		84CD028C206661A30008A8C0 /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A95F5DF206642BB005703EB /* AddressesViewController.swift */; };
+		84CD028E206668C20008A8C0 /* AddingStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CD028D206668C20008A8C0 /* AddingStoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		84AA1AA02065AAC8001FCE47 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		84AA1AA22065AAF5001FCE47 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		84CD028820665E4D0008A8C0 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		84CD028D206668C20008A8C0 /* AddingStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingStoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 				84AA1A952065A76F001FCE47 /* SettingsViewController.swift */,
 				841AA81420665122001F3AC4 /* LanguageViewController.swift */,
 				841AA81620665135001F3AC4 /* AddStoryViewController.swift */,
+				84CD028D206668C20008A8C0 /* AddingStoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				841AA80920663F15001F3AC4 /* ProfileTableViewCell.swift in Sources */,
 				84AA1A6F2065A105001FCE47 /* DataManager.swift in Sources */,
 				84AA1A6C2065A105001FCE47 /* HTTPStatusCode.swift in Sources */,
+				84CD028E206668C20008A8C0 /* AddingStoryViewController.swift in Sources */,
 				84AA1A9C2065A79B001FCE47 /* ProfileViewController.swift in Sources */,
 				84AA1A6B2065A105001FCE47 /* Constants.swift in Sources */,
 				84AA1A6E2065A105001FCE47 /* HTTPRequestManager.swift in Sources */,

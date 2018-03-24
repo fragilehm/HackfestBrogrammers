@@ -1,7 +1,83 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1sK-4W-I2Y">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Starting Page View Controller-->
+        <scene sceneID="Yn4-bt-AjZ">
+            <objects>
+                <viewController storyboardIdentifier="StartingPageViewController" id="1sK-4W-I2Y" customClass="StartingPageViewController" customModule="HackfestBrogrammers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e8I-Jm-3d1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AFg-5o-PIi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="K4Q-HI-mGJ">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Quf-gh-DwS">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="1sK-4W-I2Y" id="yEf-9Q-1p3"/>
+                                    <outlet property="delegate" destination="1sK-4W-I2Y" id="3CN-SR-Z4J"/>
+                                </connections>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="m1w-3a-DZQ">
+                                <rect key="frame" x="168" y="610" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="1" green="0.31764705879999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUU-Vp-z9C">
+                                <rect key="frame" x="270" y="613.5" width="85" height="30"/>
+                                <state key="normal" title="Пропустить">
+                                    <color key="titleColor" red="1" green="0.31764705879999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipPresed:" destination="1sK-4W-I2Y" eventType="touchUpInside" id="7U8-66-sAb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uVA-wl-S4p" firstAttribute="trailing" secondItem="sUU-Vp-z9C" secondAttribute="trailing" constant="20" id="2q4-eh-jkA"/>
+                            <constraint firstItem="AFg-5o-PIi" firstAttribute="leading" secondItem="uVA-wl-S4p" secondAttribute="leading" id="3dx-5p-9ai"/>
+                            <constraint firstItem="uVA-wl-S4p" firstAttribute="trailing" secondItem="AFg-5o-PIi" secondAttribute="trailing" id="8vD-OF-NQb"/>
+                            <constraint firstItem="uVA-wl-S4p" firstAttribute="bottom" secondItem="AFg-5o-PIi" secondAttribute="bottom" id="D3t-Ou-SRF"/>
+                            <constraint firstItem="sUU-Vp-z9C" firstAttribute="centerY" secondItem="m1w-3a-DZQ" secondAttribute="centerY" id="G3G-iX-Zzf"/>
+                            <constraint firstItem="AFg-5o-PIi" firstAttribute="top" secondItem="uVA-wl-S4p" secondAttribute="top" id="ceY-x0-iAO"/>
+                            <constraint firstItem="uVA-wl-S4p" firstAttribute="bottom" secondItem="m1w-3a-DZQ" secondAttribute="bottom" constant="20" id="tWE-QZ-CJ9"/>
+                            <constraint firstItem="m1w-3a-DZQ" firstAttribute="centerX" secondItem="e8I-Jm-3d1" secondAttribute="centerX" id="v8y-kg-Xzy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uVA-wl-S4p"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="AFg-5o-PIi" id="OE6-tX-RiF"/>
+                        <outlet property="pageControl" destination="m1w-3a-DZQ" id="Upl-BO-Qbr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hS-cU-8er" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-874" y="129"/>
+        </scene>
+    </scenes>
 </document>
