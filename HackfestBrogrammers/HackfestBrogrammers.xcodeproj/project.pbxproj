@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5D63A06AC1293FD6C94EA514 /* Pods_HackfestBrogrammers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0756AA59E249F9B273C86E79 /* Pods_HackfestBrogrammers.framework */; };
+		6A95F5DE2065E6C6005703EB /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A95F5DD2065E6C6005703EB /* RegistrationViewController.swift */; };
+		6A95F5E0206642BB005703EB /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A95F5DF206642BB005703EB /* AddressesViewController.swift */; };
 		84AA1A5320659FBB001FCE47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A5220659FBB001FCE47 /* AppDelegate.swift */; };
 		84AA1A5520659FBB001FCE47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA1A5420659FBB001FCE47 /* ViewController.swift */; };
 		84AA1A5A20659FBB001FCE47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AA1A5920659FBB001FCE47 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		0756AA59E249F9B273C86E79 /* Pods_HackfestBrogrammers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackfestBrogrammers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A95F5DD2065E6C6005703EB /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		6A95F5DF206642BB005703EB /* AddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewController.swift; sourceTree = "<group>"; };
 		6B4DBCD2DF111272C7F0D00F /* Pods-HackfestBrogrammers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackfestBrogrammers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackfestBrogrammers/Pods-HackfestBrogrammers.debug.xcconfig"; sourceTree = "<group>"; };
 		7D152CF51A7139F88791F807 /* Pods-HackfestBrogrammers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackfestBrogrammers.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackfestBrogrammers/Pods-HackfestBrogrammers.release.xcconfig"; sourceTree = "<group>"; };
 		84AA1A4F20659FBB001FCE47 /* HackfestBrogrammers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackfestBrogrammers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				84AA1A752065A5A2001FCE47 /* LoginViewController.swift */,
+				6A95F5DD2065E6C6005703EB /* RegistrationViewController.swift */,
+				6A95F5DF206642BB005703EB /* AddressesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 			files = (
 				84AA1AA32065AAF5001FCE47 /* Address.swift in Sources */,
 				84AA1A762065A5A2001FCE47 /* LoginViewController.swift in Sources */,
+				6A95F5DE2065E6C6005703EB /* RegistrationViewController.swift in Sources */,
 				84AA1A842065A6AE001FCE47 /* MainViewController.swift in Sources */,
 				84AA1AA12065AAC8001FCE47 /* Contact.swift in Sources */,
 				84AA1A6D2065A105001FCE47 /* ServerManager.swift in Sources */,
@@ -441,6 +448,7 @@
 				84AA1A6F2065A105001FCE47 /* DataManager.swift in Sources */,
 				84AA1A6C2065A105001FCE47 /* HTTPStatusCode.swift in Sources */,
 				84AA1A9C2065A79B001FCE47 /* ProfileViewController.swift in Sources */,
+				6A95F5E0206642BB005703EB /* AddressesViewController.swift in Sources */,
 				84AA1A6B2065A105001FCE47 /* Constants.swift in Sources */,
 				84AA1A6E2065A105001FCE47 /* HTTPRequestManager.swift in Sources */,
 			);
