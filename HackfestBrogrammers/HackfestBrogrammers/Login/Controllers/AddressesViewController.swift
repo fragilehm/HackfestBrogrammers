@@ -5,7 +5,6 @@
 //  Created by isi on 3/24/18.
 //  Copyright © 2018 Khasanza. All rights reserved.
 //
-
 import UIKit
 import GooglePlaces
 import GoogleMaps
@@ -22,27 +21,20 @@ class AddressesViewController: UIViewController {
         super.viewWillDisappear(animated)
         sendBack?.getData(addresses: addresses)
     }
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarItems()
-        initMap()
+        setupViews()
+        initGoogleMaps()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationItem.title = "Добавить адрес"
-    }
-
-    private func initMap(){
-        gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(mapTapped))
-        myMap.addGestureRecognizer(gestureRecognizer)
-        myMap.delegate = self
-        myMap.mapType = MKMapType.standard
-        if (addresses.count == 0){
-            let eyeCoordinate = CLLocationCoordinate2D(latitude: 42.876772, longitude: 74.603582)
-            let mapCamera = MKMapCamera(lookingAtCenter: eyeCoordinate, fromEyeCoordinate: eyeCoordinate, eyeAltitude: 1000.0)
-            myMap.setCamera(mapCamera, animated: true)
+    
+    private func initGoogleMaps() {
+        self.myMapView.delegate = self
+        self.myMapView.isMyLocationEnabled = true
+        if addresses.count == 0 {
+            let camera = GMSCameraPosition.camera(withLatitude: 42.877490, longitude: 74.598800, zoom: 10.0)
+            self.myMapView.camera = camera
         } else {
             setMarkers(addresses: addresses)
         }
@@ -104,10 +96,10 @@ extension AddressesViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         let alertController = UIAlertController(title: "Please type in title", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-
+        
         alertController.addTextField(configurationHandler: { (titleTF) in
         })
-
+        
         alertController.view.tintColor = .black
         alertController.addAction(UIAlertAction(title: "Ок", style: .default) { [weak self] _ in
             let address = Address(title: alertController.textFields![0].text!, latitude: coordinate.latitude, longitude: coordinate.longitude)
@@ -132,4 +124,3 @@ extension AddressesViewController: GMSMapViewDelegate {
     }
     
 }
-
