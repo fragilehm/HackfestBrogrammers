@@ -7,13 +7,14 @@
 //
 
 import UIKit
-import MapKit
+import GooglePlaces
+import GoogleMaps
 
 class AddressesViewController: UIViewController {
     
+    //MARK: datafields
     private var addresses = Array<Address>()
-    @IBOutlet private weak var myMap: MKMapView!
-    var gestureRecognizer = UITapGestureRecognizer()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarItems()
@@ -35,54 +36,110 @@ class AddressesViewController: UIViewController {
             let mapCamera = MKMapCamera(lookingAtCenter: eyeCoordinate, fromEyeCoordinate: eyeCoordinate, eyeAltitude: 1000.0)
             myMap.setCamera(mapCamera, animated: true)
         } else {
-            for x in addresses {
-                let address = DetailedAddress(title: x.title, coordinate: CLLocationCoordinate2D(latitude: x.latitude, longitude: x.longitude))
-                myMap.addAnnotation(address)
-            }
-            //            var mapRect = MKMapRect()
-            //            for annotation in myMap.annotations {
-            //                let annotationPoint = MKMapPointForCoordinate(annotation.coordinate)
-            //                let pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1)
-            //                mapRect = MKMapRectUnion(mapRect, pointRect)
-            //            }
-            //            myMap.setVisibleMapRect(mapRect, animated: true)
+            setMarkers(addresses: addresses)
         }
     }
     
+    private func setMarkers(addresses: Array<Address>){
+        myMapView.clear()
+        var markerList = Array<GMSMarker>()
+        for x in addresses {
+            markerList.append(createMarker(address: x))
+        }
+        fitAllMarkers(markerList: markerList)
+    }
+    
+    private func createMarker(address: Address) -> GMSMarker {
+        let position = CLLocationCoordinate2DMake(address.latitude, address.longitude)
+        let marker = GMSMarker(position: position)
+        marker.title = address.title
+        marker.map = myMapView
+        return marker
+    }
+    
+    private func fitAllMarkers( markerList: Array<GMSMarker>) {
+        var bounds = GMSCoordinateBounds()
+        
+        for marker in markerList {
+            bounds = bounds.includingCoordinate(marker.position)
+        }
+        
+        CATransaction.begin()
+        CATransaction.setValue(2, forKey: kCATransactionAnimationDuration)
+        myMapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 70.0))
+        CATransaction.commit()
+    }
+    
+    //MARK: Public methods
     func setAddresses(addresses: Array<Address>){
         self.addresses = addresses
+    }
+    
+    //MARK: Views
+    private let myMapView: GMSMapView = {
+        let v = GMSMapView()
+        v.translatesAutoresizingMaskIntoConstraints=false
+        return v
+    }()
+    
+    private func setupViews() {
+        self.view.addSubview(myMapView)
+        myMapView.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
+        myMapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
+        myMapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
+        myMapView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 60).isActive=true
     }
 }
 
 
-extension AddressesViewController: MKMapViewDelegate {
+extension AddressesViewController: GMSMapViewDelegate {
     
-    @objc public func mapTapped(sender: UITapGestureRecognizer) {
-        let location = gestureRecognizer.location(in: myMap)
-        let coordinate = myMap.convert(location, toCoordinateFrom: myMap)
-        
+//    public func mapTapped(sender: UITapGestureRecognizer) {
+//        let location = gestureRecognizer.location(in: myMapView)
+//        let coordinate = myMapView.convert(location, toCoordinateFrom: myMapView)
+//
+//        let alertController = UIAlertController(title: "Please type in title", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+//
+//        alertController.addTextField(configurationHandler: { (titleTF) in
+//        })
+//
+//        alertController.view.tintColor = .black
+//        alertController.addAction(UIAlertAction(title: "Ок", style: .default) { [weak self] _ in
+//            let address = DetailedAddress(title: alertController.textFields![0].text!, coordinate: coordinate)
+//            self?.myMapView.addAnnotation(address)
+//            self?.addresses.append(Address(title: address.title!, latitude: address.coordinate.latitude, longitude: address.coordinate.longitude))
+//        })
+//        alertController.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.cancel, handler: nil))
+//        self.present(alertController, animated: true, completion:{})
+//    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         let alertController = UIAlertController(title: "Please type in title", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        
+
         alertController.addTextField(configurationHandler: { (titleTF) in
         })
-        
+
         alertController.view.tintColor = .black
         alertController.addAction(UIAlertAction(title: "Ок", style: .default) { [weak self] _ in
-            let address = DetailedAddress(title: alertController.textFields![0].text!, coordinate: coordinate)
-            self?.myMap.addAnnotation(address)
-            self?.addresses.append(Address(title: address.title!, latitude: address.coordinate.latitude, longitude: address.coordinate.longitude))
+            let address = Address(title: alertController.textFields![0].text!, latitude: coordinate.latitude, longitude: coordinate.longitude)
+            self?.createMarker(address: address)
+            self?.addresses.append(address)
         })
         alertController.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.cancel, handler: nil))
         self.present(alertController, animated: true, completion:{})
     }
     
-    //    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-    //        if let annotation = annotation as? DetailedAddress {
-    //            let annotation_id = "pin"
-    //            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotation_id)
-    //            annotationView.image = UIImage(named: "dog")
-    //            return annotationView
-    //        }
-    //        return nil
-    //    }
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        let alertController = UIAlertController(title: "Do you want to delete the marker?", message: marker.title!, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertController.view.tintColor = .black
+        alertController.addAction(UIAlertAction(title: "Ок", style: .default) { [weak self] _ in
+            marker.map = nil
+        })
+        alertController.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.cancel, handler: nil))
+        self.present(alertController, animated: true, completion:{})
+        
+        return true
+    }
+    
 }
