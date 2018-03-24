@@ -8,6 +8,6 @@
 
 struct Address: Decodable {
     var title: String
-    var latitude: String
-    var longitude: String
+    var latitude: Double
+    var longitude: Double
 }
