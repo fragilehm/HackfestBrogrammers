@@ -13,11 +13,11 @@ import SystemConfiguration
 
 class HTTPRequestManager {
     
-    typealias SuccessHandler = (JSON) -> Void
+    typealias SuccessHandler = (Data) throws -> Void
     typealias FailureHandler = (String)-> Void
     typealias Parameter = [String: Any]?
     
-    let url = "http://165.227.147.84/"
+    let url = "http://46.101.146.101:8008/"
     
     private func request(method: HTTPMethod, api: String, parameters: Parameter, header: String, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         
@@ -47,29 +47,24 @@ class HTTPRequestManager {
             
             print("\(statusCode) - \(api)")
             
-            switch(statusCode) {
-            case HttpStatusCode.unauthorized.statusCode:
-                error("Вам нужно войти, чтобы выполнить это действие")
-                break
-            case HttpStatusCode.ok.statusCode,
-                 HttpStatusCode.accepted.statusCode,
-                 HttpStatusCode.created.statusCode:
-                do {
+            do{
+                switch(statusCode) {
+                case HttpStatusCode.unauthorized.statusCode:
+                    error("Вам нужно войти, чтобы выполнить это действие")
+                    break
+                case HttpStatusCode.ok.statusCode,
+                     HttpStatusCode.accepted.statusCode,
+                     HttpStatusCode.created.statusCode:
                     let json = try JSON(data: response.data!)
+                    print(json)
                     if json["error"].stringValue.isEmpty {
-                        completion(json)
-                        break;
+                        try completion(response.data!)
+                        break
                     }
                     error(json["error"].stringValue)
-                    //print(json)
-                } catch {
-                    print(error)
-                    // or display a dialog
-                }
-                
-                break
-            default:
-                do {
+                    break
+                default:
+                    
                     let json = try JSON(data: response.data!)
                     if !json.isEmpty {
                         print(json)
@@ -88,10 +83,9 @@ class HTTPRequestManager {
                             error("")
                         }
                     }
-                } catch {
-                    print(error)
                 }
-                
+            } catch {
+                print("error")
             }
         }
     }
