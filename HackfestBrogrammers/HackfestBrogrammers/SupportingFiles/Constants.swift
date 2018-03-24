@@ -70,6 +70,11 @@ struct Constants {
         static let SettingsImageName = ["language", "story"]
         static let SettingsTitle = ["Профиль", "Настройки", ""]
     }
+    
+    struct GoogleMaps {
+        static let APIKey = "AIzaSyAN8gCpx3O-k75hB2OkAx1gGImHRad0msw"
+    }
+
 }
 
 

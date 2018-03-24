@@ -8,8 +8,13 @@ target 'HackfestBrogrammers' do
   # Pods for HackfestBrogrammers
 	pod 'SwiftyJSON'
  	pod 'Alamofire', '4.5.1'
-     	pod 'UITextView+Placeholder'
-    	pod 'Kingfisher'
-    	pod 'IQKeyboardManagerSwift', '5.0.0'
+ 	pod 'UITextView+Placeholder'
+	pod 'Kingfisher'
+	pod 'IQKeyboardManagerSwift', '5.0.0'
+	
+	#Pods for GoogleMaps
+	pod 'GoogleMaps'
+  	pod 'GooglePlaces'
+ 	pod 'GooglePlacePicker'
 
 end
