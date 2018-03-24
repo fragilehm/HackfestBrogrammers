@@ -117,6 +117,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="savePressed:" destination="dtf-b7-RqW" eventType="touchUpInside" id="XVp-zr-9l3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

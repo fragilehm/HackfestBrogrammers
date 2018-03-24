@@ -13,6 +13,8 @@ class AddStoryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBarItems()
+
         addProfileNavigationItem()
         configureTableView()
         // Do any additional setup after loading the view.
@@ -27,8 +29,8 @@ class AddStoryViewController: UIViewController {
     }
     @objc func addPressed(_ button: UIButton) {
         let storyboard = UIStoryboard.init(name: "Settings", bundle: nil)
-        let settingsVC = storyboard.instantiateViewController(withIdentifier: "AddingStoryViewController")
-        self.navigationController?.show(settingsVC, sender: self)
+        let addingVC = storyboard.instantiateViewController(withIdentifier: "AddingStoryViewController")
+        self.navigationController?.show(addingVC, sender: self)
         //self.navigationController?.popViewController(animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {

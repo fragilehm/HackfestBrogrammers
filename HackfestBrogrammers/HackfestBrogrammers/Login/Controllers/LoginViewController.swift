@@ -26,7 +26,9 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func onClickLogin(_ sender: UIButton) {
-        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "MainNav")
+        self.navigationController?.present(vc, animated: false, completion: nil)
     }
     
     @IBAction private func onClickRegistration(_ sender: UIButton) {

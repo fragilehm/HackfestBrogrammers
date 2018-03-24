@@ -13,6 +13,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBarItems()
+
         configureTableView()
         // Do any additional setup after loading the view.
     }

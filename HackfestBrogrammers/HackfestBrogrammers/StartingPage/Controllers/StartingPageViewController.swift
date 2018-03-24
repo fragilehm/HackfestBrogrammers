@@ -25,7 +25,7 @@ class StartingPageViewController: UIViewController {
     }
     @IBAction func skipPresed(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
-        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginNav")
         self.present(loginVC, animated: true, completion: nil)
     }
 }

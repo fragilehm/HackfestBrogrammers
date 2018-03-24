@@ -16,9 +16,15 @@ class AddressesViewController: UIViewController {
     var gestureRecognizer = UITapGestureRecognizer()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBarItems()
         initMap()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.title = "Добавить адрес"
+    }
+
     private func initMap(){
         gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(mapTapped))
         myMap.addGestureRecognizer(gestureRecognizer)

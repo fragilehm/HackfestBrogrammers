@@ -13,6 +13,8 @@ class LanguageViewController: UIViewController {
     @IBOutlet weak var languagePickerView: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBarItems()
+
         languagePickerView.dataSource = self
         languagePickerView.delegate = self
         // Do any additional setup after loading the view.

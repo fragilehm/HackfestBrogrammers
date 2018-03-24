@@ -28,11 +28,18 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBarItems()
         navigationController?.setNavigationBarHidden(false, animated: true)
        
 
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.title = "Регистрация"
+    }
+
     
     @IBAction private func onClickAddresses(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Login", bundle: nil)

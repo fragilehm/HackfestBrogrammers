@@ -44,13 +44,13 @@
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="m1w-3a-DZQ">
                                 <rect key="frame" x="168" y="610" width="39" height="37"/>
-                                <color key="pageIndicatorTintColor" red="1" green="0.31764705879999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="pageIndicatorTintColor" red="0.13400784130000001" green="0.38497573140000002" blue="0.55954700710000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUU-Vp-z9C">
                                 <rect key="frame" x="270" y="613.5" width="85" height="30"/>
                                 <state key="normal" title="Пропустить">
-                                    <color key="titleColor" red="1" green="0.31764705879999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.13400784130000001" green="0.38497573140000002" blue="0.55954700710000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="skipPresed:" destination="1sK-4W-I2Y" eventType="touchUpInside" id="7U8-66-sAb"/>

@@ -26,13 +26,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLZ-Lg-dUA">
                                 <rect key="frame" x="0.0" y="12" width="347" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" red="1" green="0.31764705879999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.13400784130000001" green="0.38497573140000002" blue="0.55954700710000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="very very descriptive description of description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPw-3V-5qW">
                                 <rect key="frame" x="12" y="47" width="323" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -48,7 +48,7 @@
                         </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kve-H3-HvR">
-                        <rect key="frame" x="40" y="20" width="267" height="267"/>
+                        <rect key="frame" x="40" y="50" width="267" height="267"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="kve-H3-HvR" secondAttribute="height" multiplier="1:1" id="DiD-Yk-cwH"/>
                         </constraints>
@@ -61,7 +61,7 @@
                 <constraint firstAttribute="trailing" secondItem="G7j-sL-cXT" secondAttribute="trailing" id="RIO-9c-ZOj"/>
                 <constraint firstItem="G7j-sL-cXT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Roi-0t-N4L"/>
                 <constraint firstAttribute="trailing" secondItem="kve-H3-HvR" secondAttribute="trailing" constant="40" id="aNp-NE-2gh"/>
-                <constraint firstItem="kve-H3-HvR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="gFd-XC-ohO"/>
+                <constraint firstItem="kve-H3-HvR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="50" id="gFd-XC-ohO"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="347" height="638"/>
