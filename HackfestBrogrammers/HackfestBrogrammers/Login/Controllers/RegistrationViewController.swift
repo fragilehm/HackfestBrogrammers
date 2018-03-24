@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController, SendBack {
     
     private var addresses = Array<Address>()
 
@@ -45,6 +45,7 @@ class RegistrationViewController: UIViewController {
         let sb = UIStoryboard(name: "Login", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "AddressesViewController") as! AddressesViewController
         vc.setAddresses(addresses: addresses)
+        vc.sendBack = self
         self.navigationController?.show(vc, sender: self)
     }
     
@@ -52,4 +53,8 @@ class RegistrationViewController: UIViewController {
         
     }
     
+    func getData(addresses: Array<Address>) {
+        self.addresses = addresses
+    }
+
 }

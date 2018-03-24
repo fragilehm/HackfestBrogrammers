@@ -14,6 +14,14 @@ class AddressesViewController: UIViewController {
     
     //MARK: datafields
     private var addresses = Array<Address>()
+    var sendBack: SendBack?
+    
+    var callback : ((Array<Address>) -> Void)?
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        sendBack?.getData(addresses: addresses)
+    }
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,25 +102,6 @@ class AddressesViewController: UIViewController {
 
 extension AddressesViewController: GMSMapViewDelegate {
     
-//    public func mapTapped(sender: UITapGestureRecognizer) {
-//        let location = gestureRecognizer.location(in: myMapView)
-//        let coordinate = myMapView.convert(location, toCoordinateFrom: myMapView)
-//
-//        let alertController = UIAlertController(title: "Please type in title", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-//
-//        alertController.addTextField(configurationHandler: { (titleTF) in
-//        })
-//
-//        alertController.view.tintColor = .black
-//        alertController.addAction(UIAlertAction(title: "Ок", style: .default) { [weak self] _ in
-//            let address = DetailedAddress(title: alertController.textFields![0].text!, coordinate: coordinate)
-//            self?.myMapView.addAnnotation(address)
-//            self?.addresses.append(Address(title: address.title!, latitude: address.coordinate.latitude, longitude: address.coordinate.longitude))
-//        })
-//        alertController.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.cancel, handler: nil))
-//        self.present(alertController, animated: true, completion:{})
-//    }
-    
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         let alertController = UIAlertController(title: "Please type in title", message: nil, preferredStyle: UIAlertControllerStyle.alert)
 
@@ -143,3 +132,4 @@ extension AddressesViewController: GMSMapViewDelegate {
     }
     
 }
+
