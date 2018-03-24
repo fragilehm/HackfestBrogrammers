@@ -10,6 +10,8 @@ import UIKit
 
 class RegistrationViewController: UIViewController {
     
+    private var addresses = Array<Address>()
+
     @IBOutlet private weak var repeatPasswordTF: UITextField!
     @IBOutlet private weak var passwordTF: UITextField!
     @IBOutlet private weak var descriptionTV: UITextView!
@@ -35,6 +37,7 @@ class RegistrationViewController: UIViewController {
     @IBAction private func onClickAddresses(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Login", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "AddressesViewController") as! AddressesViewController
+        vc.setAddresses(addresses: addresses)
         self.navigationController?.show(vc, sender: self)
     }
     
