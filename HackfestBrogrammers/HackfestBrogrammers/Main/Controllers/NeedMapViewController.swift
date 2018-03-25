@@ -98,7 +98,7 @@ class NeedMapViewController: UIViewController {
 //    }
 //
     private func createMarker(address: Pin, index: Int) -> GMSMarker {
-        let position = CLLocationCoordinate2DMake((address.latitude as NSString).doubleValue, (address.longitude as NSString).doubleValue)
+        let position = CLLocationCoordinate2DMake((address.latitude as! NSString).doubleValue, (address.longitude as! NSString).doubleValue)
         let marker = GMSMarker(position: position)
         marker.title = "\(index)"
         marker.icon = UIImage(named: "\(address.status)")
