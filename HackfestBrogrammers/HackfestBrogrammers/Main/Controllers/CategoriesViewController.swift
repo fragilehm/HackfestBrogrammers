@@ -52,19 +52,19 @@ class CategoriesViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
         else {
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let needVC = storyboard.instantiateViewController(withIdentifier: "NeedMapViewController") as! NeedMapViewController
+            needVC.categoryIds = selectedIds
             if isNeed {
-                let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                let needVC = storyboard.instantiateViewController(withIdentifier: "NeedMapViewController") as! NeedMapViewController
-                needVC.categoryIds = selectedIds
-                self.navigationController?.show(needVC, sender: self)
+                needVC.need = "need"
+
             }
             else
             {
-                let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                let needVC = storyboard.instantiateViewController(withIdentifier: "WantMapViewController") as! WantMapViewController
-                needVC.categoryIds = selectedIds
-                self.navigationController?.show(needVC, sender: self)
+                needVC.need = "want"
             }
+            self.navigationController?.show(needVC, sender: self)
+
             
         }
         

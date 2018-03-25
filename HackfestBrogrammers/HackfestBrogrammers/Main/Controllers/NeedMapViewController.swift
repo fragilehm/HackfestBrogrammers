@@ -12,6 +12,7 @@ import GoogleMaps
 class NeedMapViewController: UIViewController {
     var categoryIds = [Int]()
     var locationManager = CLLocationManager()
+    var need = ""
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var hideButton: UIButton!
     @IBOutlet weak var backView: UIView!
@@ -26,7 +27,7 @@ class NeedMapViewController: UIViewController {
         setNavigationBarItems()
         setupViews()
         initGoogleMaps()
-        ServerManager.shared.getNeedMarkers(category_id: categoryIds[0], setMarkersData, error: showErrorAlert)
+        ServerManager.shared.getNeedMarkers(need: need,category_id: categoryIds[0], setMarkersData, error: showErrorAlert)
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
