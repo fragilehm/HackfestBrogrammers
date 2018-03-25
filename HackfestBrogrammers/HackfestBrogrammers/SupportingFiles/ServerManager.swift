@@ -23,8 +23,8 @@ class ServerManager: HTTPRequestManager  {
             completion(try JSONDecoder().decode([Category].self, from: data))
         }, error: error)
     }
-    func getNeedMarkers(category_id: Int, _ completion: @escaping ([Pin])-> Void, error: @escaping (String)-> Void) {
-        self.get(api: "\(Constants.Network.EndPoints.NeedMarkers)/\(category_id)", completion: { (data) in
+    func getNeedMarkers(need: String,category_id: Int, _ completion: @escaping ([Pin])-> Void, error: @escaping (String)-> Void) {
+        self.get(api: "\(need)/categories/\(category_id)", completion: { (data) in
             completion(try JSONDecoder().decode([Pin].self, from: data))
         }, error: error)
     }
