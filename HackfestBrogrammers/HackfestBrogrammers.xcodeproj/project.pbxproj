@@ -10,6 +10,8 @@
 		5D63A06AC1293FD6C94EA514 /* Pods_HackfestBrogrammers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0756AA59E249F9B273C86E79 /* Pods_HackfestBrogrammers.framework */; };
 		6AA221902066D6F70058D484 /* AddMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA2218F2066D6F70058D484 /* AddMarkerViewController.swift */; };
 		6AA221922066D7030058D484 /* AddMarker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA221912066D7030058D484 /* AddMarker.storyboard */; };
+		6AA22194206725260058D484 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B6BE02066D77900ADA66D /* CategoriesTableViewCell.swift */; };
+		6AA22195206725260058D484 /* CategoriesTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 848B6BE12066D77900ADA66D /* CategoriesTableViewCell.xib */; };
 		6AD604BC2066712A00C020A3 /* DetailedAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD604BB2066712A00C020A3 /* DetailedAddress.swift */; };
 		6AD604BE2066C5FA00C020A3 /* SendBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD604BD2066C5FA00C020A3 /* SendBack.swift */; };
 		841AA80920663F15001F3AC4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841AA80720663F15001F3AC4 /* ProfileTableViewCell.swift */; };
@@ -25,7 +27,6 @@
 		847991EC20665CE000E4261A /* StartingPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847991EA20665CE000E4261A /* StartingPageCollectionViewCell.swift */; };
 		847991ED20665CE000E4261A /* StartingPageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847991EB20665CE000E4261A /* StartingPageCollectionViewCell.xib */; };
 		848B6BDF2066D63B00ADA66D /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B6BDE2066D63B00ADA66D /* CategoriesViewController.swift */; };
-		848B6BE22066D77900ADA66D /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B6BE02066D77900ADA66D /* CategoriesTableViewCell.swift */; };
 		848B6BE32066D77900ADA66D /* CategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848B6BE12066D77900ADA66D /* CategoriesTableViewCell.xib */; };
 		848B6BE52066E4FF00ADA66D /* NeedMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B6BE42066E4FF00ADA66D /* NeedMapViewController.swift */; };
 		848B6BE72066E7EC00ADA66D /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B6BE62066E7EC00ADA66D /* Pin.swift */; };
@@ -560,6 +561,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AA22194206725260058D484 /* CategoriesTableViewCell.swift in Sources */,
+				6AA22195206725260058D484 /* CategoriesTableViewCell.xib in Sources */,
 				848B6BE72066E7EC00ADA66D /* Pin.swift in Sources */,
 				84CD028C206661A30008A8C0 /* AddressesViewController.swift in Sources */,
 				6AD604BE2066C5FA00C020A3 /* SendBack.swift in Sources */,
