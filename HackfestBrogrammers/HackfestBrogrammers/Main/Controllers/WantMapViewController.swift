@@ -1,5 +1,5 @@
 //
-//  NeedMapViewController.swift
+//  WantMapViewController.swift
 //  HackfestBrogrammers
 //
 //  Created by Khasanza on 3/25/18.
@@ -9,45 +9,24 @@
 import UIKit
 import GooglePlaces
 import GoogleMaps
-class NeedMapViewController: UIViewController {
+class WantMapViewController: UIViewController {
     var categoryIds = [Int]()
     var locationManager = CLLocationManager()
-    @IBOutlet weak var detailView: UIView!
-    @IBOutlet weak var hideButton: UIButton!
-    @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var detailAddressLabel: UILabel!
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-    @IBOutlet weak var detailPhoneLabel: UILabel!
-    @IBOutlet weak var detailCategoriesLabel: UILabel!
-    @IBOutlet weak var detailRecommendedLabel: UILabel!
-    var markers = [Pin]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarItems()
         setupViews()
         initGoogleMaps()
-        ServerManager.shared.getNeedMarkers(category_id: categoryIds[0], setMarkersData, error: showErrorAlert)
+        ServerManager.shared.getWantMarkers(category_id: categoryIds[0], setMarkersData, error: showErrorAlert)
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = "Нуждаюсь в помощи"
-    }
-    @IBAction func xPressed(_ sender: Any) {
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            self.backView.isHidden = true
-
-        }, completion: nil)
-    }
-    @IBAction func hidePressed(_ sender: Any) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.backView.isHidden = true
-        }, completion: nil)
+        self.navigationItem.title = "Хочу помочь"
     }
     func setMarkersData(markers: [Pin]){
         print(markers)
-        self.markers = markers
         var markerList = Array<GMSMarker>()
         
         for (index, marker) in markers.enumerated() {
@@ -58,18 +37,16 @@ class NeedMapViewController: UIViewController {
     private func initGoogleMaps() {
         self.myMapView.delegate = self
         self.myMapView.isMyLocationEnabled = true
+        myMapView.settings.myLocationButton = true
+
         let camera = GMSCameraPosition.camera(withLatitude: 42.877490, longitude: 74.598800, zoom: 10.0)
         self.myMapView.camera = camera
-        myMapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 55, right: 0)
-        myMapView.settings.myLocationButton = true
-        //Location Manager code to fetch current location
         self.locationManager.delegate = self
-        
         self.locationManager.startUpdatingLocation()
         //if addresses.count == 0 {
-            
+        
         //} else {
-          //  setMarkers(addresses: addresses)
+        //  setMarkers(addresses: addresses)
         //}
     }
     //MARK: Views
@@ -85,22 +62,25 @@ class NeedMapViewController: UIViewController {
         myMapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
         myMapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
         myMapView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 60).isActive=true
-        self.view.bringSubview(toFront: backView)
     }
     
-//    private func setMarkers(addresses: Array<Address>){
-//        myMapView.clear()
-//        var markerList = Array<GMSMarker>()
-//        for  in addresses {
-//            markerList.append(createMarker(address: x))
-//        }
-//        fitAllMarkers(markerList: markerList)
-//    }
-//
+    //    private func setMarkers(addresses: Array<Address>){
+    //        myMapView.clear()
+    //        var markerList = Array<GMSMarker>()
+    //        for  in addresses {
+    //            markerList.append(createMarker(address: x))
+    //        }
+    //        fitAllMarkers(markerList: markerList)
+    //    }
+    //
     private func createMarker(address: Pin, index: Int) -> GMSMarker {
-        let position = CLLocationCoordinate2DMake((address.latitude as NSString).doubleValue, (address.longitude as NSString).doubleValue)
+        var position = CLLocationCoordinate2DMake(42.890496, 74.585858)
+        
+        if index == 0 {
+            position = CLLocationCoordinate2DMake(42.884931, 74.600278)
+        }
         let marker = GMSMarker(position: position)
-        marker.title = "\(index)"
+        marker.title = address.description
         marker.icon = UIImage(named: "\(address.status)")
         marker.map = myMapView
         return marker
@@ -114,12 +94,14 @@ class NeedMapViewController: UIViewController {
         }
         
         CATransaction.begin()
-        CATransaction.setValue(1, forKey: kCATransactionAnimationDuration)
+        CATransaction.setValue(2, forKey: kCATransactionAnimationDuration)
         myMapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 70.0))
         CATransaction.commit()
     }
+    
+    
 }
-extension NeedMapViewController: GMSMapViewDelegate {
+extension WantMapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         
@@ -127,35 +109,22 @@ extension NeedMapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         print(marker.title)
-        detailAddressLabel.text = self.markers[Int(marker.title!)!].address
-        detailPhoneLabel.text = self.markers[Int(marker.title!)!].user_phone
-        detailDescriptionLabel.text = self.markers[Int(marker.title!)!].description
-        var cat = ""
-        for category in self.markers[Int(marker.title!)!].categories {
-            cat.append(category.title)
-        }
-        detailCategoriesLabel.text = cat
-        detailRecommendedLabel.text = self.markers[Int(marker.title!)!].user_connectedTo
-        self.backView.isHidden = false
-        UIView.animate(withDuration: 0.5, animations: {
-            self.detailView.alpha = 1
-        }) { (animated) in
-            self.hideButton.isHidden = false
-        }
+        
         return true
     }
     
 }
-extension NeedMapViewController: CLLocationManagerDelegate {
+extension WantMapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
         
-//        let camera = GMSCameraPosition.cameraWithLatitude((location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
-//
-//        self.mapView?.animateToCameraPosition(camera)
+        //        let camera = GMSCameraPosition.cameraWithLatitude((location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
+        //
+        //        self.mapView?.animateToCameraPosition(camera)
         
         //Finally stop updating location otherwise it will come again and again in this delegate
         self.locationManager.stopUpdatingLocation()
     }
 }
+
 
