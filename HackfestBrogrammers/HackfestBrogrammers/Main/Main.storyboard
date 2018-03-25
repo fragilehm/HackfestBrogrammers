@@ -28,14 +28,14 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ruka" translatesAutoresizingMaskIntoConstraints="NO" id="kwW-cq-Bic">
                                         <rect key="frame" x="0.0" y="301.5" width="375" height="301.5"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нужна помощь" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIq-Px-Cw4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хочу помочь" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIq-Px-Cw4">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70337257919999996" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хочу помочь" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDe-vd-wDY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нужна помощь" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDe-vd-wDY">
                                         <rect key="frame" x="0.0" y="301.5" width="375" height="301.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70337257919999996" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
@@ -161,20 +161,37 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recommended by unicef " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sic-AR-ZTd">
-                                                        <rect key="frame" x="12" y="164" width="257" height="19.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="рекомендовано UNICED " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sic-AR-ZTd">
+                                                        <rect key="frame" x="12" y="164" width="257" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" red="0.1333333333" green="0.38431372549999998" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyC-GK-Dby">
+                                                        <rect key="frame" x="47" y="191.5" width="187" height="30"/>
+                                                        <color key="backgroundColor" red="0.1333333333" green="0.38431372549999998" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Посмотреть рассказы">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="showStoryPressed:" destination="Dba-V2-FZq" eventType="touchUpInside" id="9d7-7D-jzV"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="672-2i-q0u" firstAttribute="centerX" secondItem="jtg-K2-Z05" secondAttribute="centerX" id="0vj-N8-2bC"/>
+                                                    <constraint firstItem="dyC-GK-Dby" firstAttribute="centerX" secondItem="jtg-K2-Z05" secondAttribute="centerX" id="81G-9L-Ih3"/>
                                                     <constraint firstAttribute="trailing" secondItem="672-2i-q0u" secondAttribute="trailing" constant="30" id="9AC-06-CE4"/>
                                                     <constraint firstItem="sic-AR-ZTd" firstAttribute="trailing" secondItem="672-2i-q0u" secondAttribute="trailing" id="GCE-jj-3Pw"/>
                                                     <constraint firstItem="1JX-6f-Zbr" firstAttribute="leading" secondItem="jtg-K2-Z05" secondAttribute="leading" constant="12" id="KfS-Me-KmZ"/>
                                                     <constraint firstItem="1JX-6f-Zbr" firstAttribute="trailing" secondItem="672-2i-q0u" secondAttribute="trailing" id="OYA-kg-8Tv"/>
-                                                    <constraint firstAttribute="bottom" secondItem="sic-AR-ZTd" secondAttribute="bottom" constant="20" id="RZ0-Wj-qQ6"/>
+                                                    <constraint firstAttribute="bottom" secondItem="dyC-GK-Dby" secondAttribute="bottom" constant="20" id="QHk-Cf-YQl"/>
                                                     <constraint firstItem="1JX-6f-Zbr" firstAttribute="top" secondItem="672-2i-q0u" secondAttribute="bottom" constant="8" id="Vw5-qt-tc5"/>
                                                     <constraint firstItem="7S8-vU-xZW" firstAttribute="leading" secondItem="jtg-K2-Z05" secondAttribute="leading" constant="12" id="X92-dQ-wTF"/>
                                                     <constraint firstItem="6Vq-qb-U85" firstAttribute="top" secondItem="1JX-6f-Zbr" secondAttribute="bottom" constant="8" id="ZsX-Oo-fg9"/>
@@ -184,7 +201,9 @@
                                                     <constraint firstItem="7S8-vU-xZW" firstAttribute="trailing" secondItem="672-2i-q0u" secondAttribute="trailing" id="bYa-kZ-ETw"/>
                                                     <constraint firstItem="6Vq-qb-U85" firstAttribute="leading" secondItem="jtg-K2-Z05" secondAttribute="leading" constant="12" id="cPw-l7-Otl"/>
                                                     <constraint firstItem="sic-AR-ZTd" firstAttribute="top" secondItem="7S8-vU-xZW" secondAttribute="bottom" constant="8" id="eh4-5L-vsp"/>
+                                                    <constraint firstItem="dyC-GK-Dby" firstAttribute="top" secondItem="sic-AR-ZTd" secondAttribute="bottom" constant="8" id="g7v-ao-49y"/>
                                                     <constraint firstItem="sic-AR-ZTd" firstAttribute="leading" secondItem="jtg-K2-Z05" secondAttribute="leading" constant="12" id="lCw-Bo-aZg"/>
+                                                    <constraint firstItem="dyC-GK-Dby" firstAttribute="width" secondItem="jtg-K2-Z05" secondAttribute="width" multiplier="2:3" id="nLu-23-8iG"/>
                                                     <constraint firstItem="672-2i-q0u" firstAttribute="leading" secondItem="jtg-K2-Z05" secondAttribute="leading" constant="12" id="pun-8V-bxN"/>
                                                 </constraints>
                                             </scrollView>

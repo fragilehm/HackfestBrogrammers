@@ -11,13 +11,20 @@ import UIKit
 class AddStoryViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var user_id = 1
+    var stories = [Story]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarItems()
 
         addProfileNavigationItem()
         configureTableView()
+        ServerManager.shared.getUserStory(user_id: user_id, setStories, error: showErrorAlert)
         // Do any additional setup after loading the view.
+    }
+    func setStories(stories: [Story]){
+        self.stories = stories
+        self.tableView.reloadData()
     }
     func addProfileNavigationItem() {
         let profileButton = UIButton.init(type: .system)
@@ -49,12 +56,12 @@ extension AddStoryViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.stories.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoryTableViewCell", for: indexPath) as! StoryTableViewCell
-        cell.descriptionLabel.text = "row - \(indexPath.row)"
-        cell.lastUpdateLabel.text = "21.08.09"
+        cell.descriptionLabel.text = stories[indexPath.row].description
+        cell.lastUpdateLabel.text = stories[indexPath.row].updated
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

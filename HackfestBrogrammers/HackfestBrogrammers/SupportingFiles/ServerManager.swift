@@ -33,6 +33,12 @@ class ServerManager: HTTPRequestManager  {
             completion(try JSONDecoder().decode([Pin].self, from: data))
         }, error: error)
     }
+    
+    func getUserStory(user_id: Int, _ completion: @escaping ([Story])-> Void, error: @escaping (String)-> Void) {
+        self.get(api: "histories/users/\(user_id)", completion: { (data) in
+            completion(try JSONDecoder().decode([Story].self, from: data))
+        }, error: error)
+    }
 //
 //    func addStories(story: Story,_ completion: @escaping ()-> Void, error: @escaping (String)-> Void) {
 //        self.post(api: "stories/", parameters: story.getDict(), completion: { (json) in

@@ -13,6 +13,7 @@ class NeedMapViewController: UIViewController {
     var categoryIds = [Int]()
     var locationManager = CLLocationManager()
     var need = ""
+    var user_id = 1
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var hideButton: UIButton!
     @IBOutlet weak var backView: UIView!
@@ -40,6 +41,12 @@ class NeedMapViewController: UIViewController {
             self.backView.isHidden = true
 
         }, completion: nil)
+    }
+    @IBAction func showStoryPressed(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: "Settings", bundle: nil)
+        let storiesVC = storyboard.instantiateViewController(withIdentifier: "AddStoryViewController") as! AddStoryViewController
+        storiesVC.user_id = user_id
+        self.navigationController?.show(storiesVC, sender: self)
     }
     @IBAction func hidePressed(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
@@ -128,6 +135,9 @@ extension NeedMapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         print(marker.title)
+        //user_id = self.markers[Int(marker.title!)!].user_id!
+        
+        user_id = 1
         detailAddressLabel.text = self.markers[Int(marker.title!)!].address
         detailPhoneLabel.text = self.markers[Int(marker.title!)!].user_phone
         detailDescriptionLabel.text = self.markers[Int(marker.title!)!].description

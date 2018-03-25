@@ -82,7 +82,7 @@
                                     <action selector="onClickRegistration:" destination="t7i-9q-qcE" eventType="touchUpInside" id="NcJ-jI-FYr"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="want" translatesAutoresizingMaskIntoConstraints="NO" id="JKe-nP-AGv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="JKe-nP-AGv">
                                 <rect key="frame" x="50" y="104" width="275" height="275"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JKe-nP-AGv" secondAttribute="height" multiplier="1:1" id="Hj3-6p-f5d"/>
@@ -428,7 +428,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logo" width="512" height="512"/>
         <image name="no_image" width="125" height="125"/>
-        <image name="want" width="512" height="512"/>
     </resources>
 </document>
