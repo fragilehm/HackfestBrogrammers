@@ -40,9 +40,9 @@ class MainViewController: UIViewController {
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "add"), style: .done, target: self, action:  #selector(addPressed(_:)))
     }
     @objc func addPressed(_ button: UIButton) {
-//        let storyboard = UIStoryboard.init(name: "Settings", bundle: nil)
-//        let settingsVC = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
-//        self.navigationController?.show(settingsVC, sender: self)
+        let storyboard = UIStoryboard.init(name: "AddMarker", bundle: nil)
+        let settingsVC = storyboard.instantiateViewController(withIdentifier: "AddMarkerViewController")
+        self.navigationController?.show(settingsVC, sender: self)
         //self.navigationController?.popViewController(animated: true)
     }
     @objc func profilePressed(_ button: UIButton) {
