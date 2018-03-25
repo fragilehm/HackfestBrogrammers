@@ -39,6 +39,13 @@ class ServerManager: HTTPRequestManager  {
             completion(try JSONDecoder().decode([Story].self, from: data))
         }, error: error)
     }
+    func addMarker(marker: AddPin,_ completion: @escaping ()-> Void, error: @escaping (String)-> Void) {
+        self.post(api: Constants.Network.EndPoints.Marker, parameters: marker.toDictionary(), completion: { (data) in
+            completion()
+        }) { (message) in
+            print(message)
+        }
+    }
 //
 //    func addStories(story: Story,_ completion: @escaping ()-> Void, error: @escaping (String)-> Void) {
 //        self.post(api: "stories/", parameters: story.getDict(), completion: { (json) in

@@ -63,7 +63,11 @@ class AddMarkerViewController: UIViewController, MarkerCategoriesViewControllerD
         var phone = phoneTF.text
         let latitude = googleMarker?.position.latitude.description
         let longitude = googleMarker?.position.longitude.description
-        var marker = AddPin(categories: intCat, status: "1", description: descriptionTF.text, address: googleMarker?.title, latitude: (String(describing: latitude?.prefix(9)) as NSString).doubleValue, longitude: (String(describing: longitude?.prefix(9)) as NSString).doubleValue, isNeed: isNeed, user_id: 1, user_phone: phoneTF.text, user_email: emailTF.text, user_name: nameTF.text, user_surname: surnameTF.text, user_description: nil, user_image_url: nil, user_connectedTo: nil)
+//        print(String(describing: latitude?.prefix(9)))
+//        print(String(describing: latitude?.prefix(9)) as! NSString)
+//        print(Double(String(describing: latitude?.prefix(9))) )
+//        print((String(describing: latitude?.prefix(9)) as NSString).doubleValue)
+        var marker = AddPin(categories: intCat, status: "1", description: descriptionTF.text, address: googleMarker?.title, latitude: (String(describing: latitude!.prefix(9)) as NSString).doubleValue, longitude: (String(describing: longitude!.prefix(9)) as NSString).doubleValue, isNeed: isNeed, user_id: 1, user_phone: phoneTF.text, user_email: emailTF.text, user_name: nameTF.text, user_surname: surnameTF.text, user_description: nil, user_image_url: nil, user_connectedTo: nil)
        // var dic = marker.toDictionary()
         ServerManager.shared.addMarker(marker: marker, onSuccess, error: showErrorAlert)
     }
@@ -132,7 +136,7 @@ extension AddMarkerViewController: GMSMapViewDelegate {
     }
     
     private func setMarker(coordinate: CLLocationCoordinate2D){
-        let alertController = UIAlertController(title: "Please type in title", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Введите название", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         
         alertController.addTextField(configurationHandler: { (titleTF) in
         })

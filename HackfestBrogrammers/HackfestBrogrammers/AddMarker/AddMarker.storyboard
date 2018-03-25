@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -103,8 +102,8 @@
                                             <constraint firstAttribute="height" constant="35" id="p9b-AX-afe"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="Need"/>
-                                            <segment title="Want"/>
+                                            <segment title="Нужна помощь"/>
+                                            <segment title="Хочу помочь"/>
                                         </segments>
                                         <color key="tintColor" red="0.13333333333333333" green="0.38431372549019605" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
@@ -172,14 +171,14 @@
                                             <constraint firstAttribute="width" constant="100" id="4Kf-hM-NeB"/>
                                             <constraint firstAttribute="height" constant="35" id="kzG-oI-H7j"/>
                                         </constraints>
-                                        <state key="normal" title="Categories">
+                                        <state key="normal" title="Категории">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onClickCategories:" destination="wIK-tM-T7a" eventType="touchUpInside" id="2IY-1V-sRH"/>
                                         </connections>
                                     </button>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7F-vu-ZLh">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Категории: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7F-vu-ZLh">
                                         <rect key="frame" x="24" y="646" width="327" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -192,7 +191,7 @@
                                             <constraint firstAttribute="width" constant="120" id="8c3-Dj-1K3"/>
                                             <constraint firstAttribute="height" constant="35" id="UWX-fg-rhi"/>
                                         </constraints>
-                                        <state key="normal" title="Submit">
+                                        <state key="normal" title="Сохранить">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -246,14 +245,13 @@
                                 </constraints>
                             </scrollView>
                             <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzU-rE-ONi">
-                                <rect key="frame" x="319" y="944" width="40" height="40"/>
+                                <rect key="frame" x="279" y="957" width="80" height="27"/>
                                 <color key="backgroundColor" red="0.1333333333" green="0.38431372549999998" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="SzU-rE-ONi" secondAttribute="height" multiplier="1:1" id="7Ln-Pk-uHs"/>
-                                    <constraint firstAttribute="width" constant="40" id="R1U-9s-GoH"/>
+                                    <constraint firstAttribute="width" constant="80" id="R1U-9s-GoH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Done">
+                                <state key="normal" title="Сохранить">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
