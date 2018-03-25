@@ -28,44 +28,13 @@ class ServerManager: HTTPRequestManager  {
             completion(try JSONDecoder().decode([Pin].self, from: data))
         }, error: error)
     }
-//
-//    func addStories(story: Story,_ completion: @escaping ()-> Void, error: @escaping (String)-> Void) {
-//        self.post(api: "stories/", parameters: story.getDict(), completion: { (json) in
-//            completion()
-//        }) { (message) in
-//            print(message)
-//        }
-//    }
-//
-//    func getAllCategories(_ completion: @escaping (Categories)-> Void, error: @escaping (String)-> Void) {
-//        self.get(api: "categories", completion: { (json) in
-//            completion(Categories(json: json))
-//        }, error: error)
-//    }
-//
-//    func getInstitutesById(id: Int, _ completion: @escaping (Institutes)-> Void, error: @escaping (String)-> Void) {
-//        self.get(api: "servicesByCat/\(id)/", completion: { (json) in
-//            completion(Institutes(json: json))
-//        }, error: error)
-//    }
-//    func getArticles(_ completion: @escaping (Articles)-> Void, error: @escaping (String)-> Void) {
-//        self.get(api: "infos", completion: { (json) in
-//            completion(Articles(json: json))
-//        }, error: error)
-//    }
-//    func getPins(_ completion: @escaping (Pins)-> Void, error: @escaping (String)-> Void) {
-//        self.get(api: "pins", completion: { (json) in
-//            completion(Pins(json: json))
-//        }, error: error)
-//    }
-//    func addPins(pin: Pin,_ completion: @escaping ()-> Void, error: @escaping (String)-> Void) {
-//        print(pin.getDict())
-//        self.post(api: "pins/", parameters: pin.getDict(), completion: { (json) in
-//            completion()
-//        }) { (message) in
-//            print(message)
-//        }
-//    }
-//
+
+    func addMarker(marker: AddPin,_ completion: @escaping ()-> Void, error: @escaping (String)-> Void) {
+        self.post(api: Constants.Network.EndPoints.Marker, parameters: marker.toDictionary(), completion: { (data) in
+            completion()
+        }) { (message) in
+            print(message)
+        }
+    }
 
 }
