@@ -10,16 +10,44 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var needLabel: UILabel! {
+        didSet {
+            needLabel.isUserInteractionEnabled = true
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(needPressed))
+            needLabel.addGestureRecognizer(gestureRecognizer)
+        }
+    }
+    @IBOutlet weak var wantLabel: UILabel! {
+        didSet {
+            wantLabel.isUserInteractionEnabled = true
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(wantPressed))
+            wantLabel.addGestureRecognizer(gestureRecognizer)
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         addProfileNavigationItem()
         addAddNavigationItem()
-        // Do any additional setup after loading the view.
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.title = "Главная"
+    }
+    @objc func needPressed(_ sender: UITapGestureRecognizer) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let categoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesViewController")
+        self.navigationController?.show(categoriesVC, sender: self)
+        print("need")
+    }
+    @objc func wantPressed(_ sender: UITapGestureRecognizer) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let categoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesViewController")
+        self.navigationController?.show(categoriesVC, sender: self)
+        print("want")
+        
     }
     func addProfileNavigationItem() {
         let profileButton = UIButton.init(type: .system)
@@ -50,10 +78,6 @@ class MainViewController: UIViewController {
         let settingsVC = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
         self.navigationController?.show(settingsVC, sender: self)
         //self.navigationController?.popViewController(animated: true)
-    }
-    @IBAction func needPressed(_ sender: Any) {
-    }
-    @IBAction func wantPressed(_ sender: Any) {
     }
     
 

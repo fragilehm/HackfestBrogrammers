@@ -18,12 +18,16 @@ class ServerManager: HTTPRequestManager  {
         }
         return Static.instance
     }
-    
-//    func getAllStories(_ completion: @escaping (Stories)-> Void, error: @escaping (String)-> Void) {
-//        self.get(api: "stories", completion: { (json) in
-//            completion(Stories(json: json))
-//        }, error: error)
-//    }
+    func getCategories(_ completion: @escaping ([Category])-> Void, error: @escaping (String)-> Void) {
+        self.get(api: Constants.Network.EndPoints.Categories, completion: { (data) in
+            completion(try JSONDecoder().decode([Category].self, from: data))
+        }, error: error)
+    }
+    func getMarkersByCategory(category_id: Int, _ completion: @escaping ([Pin])-> Void, error: @escaping (String)-> Void) {
+        self.get(api: "\(Constants.Network.EndPoints.Categories)/\(category_id)", completion: { (data) in
+            completion(try JSONDecoder().decode([Pin].self, from: data))
+        }, error: error)
+    }
 //
 //    func addStories(story: Story,_ completion: @escaping ()-> Void, error: @escaping (String)-> Void) {
 //        self.post(api: "stories/", parameters: story.getDict(), completion: { (json) in

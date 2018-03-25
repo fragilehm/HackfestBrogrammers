@@ -10,4 +10,6 @@ import Foundation
 
 struct Colors {
     static let RED = 0xFF5155
+    static let PURPLE = 0x22628F
+
 }

@@ -43,26 +43,13 @@ struct Constants {
         }
         
         struct EndPoints {
-            static let Token_auth = "api/token-auth"
-            static let Login = "api/user/login"
-            static let UpdateUser = "api/user"
-            static let SignUp = "api/user/signup"
-            static let FinOffice = "api/fin-office"
-            static let NewRossahar = "api/news/rossahar?limit=50&offset=0"
-            static let LocalNews = "api/news/domestic?limit=50&offset=0"
-            static let Expenses = "api/expenses"
-            static let SugarJom = "api/sugar-jom"
-            static let Currencies = "api/currency"
-            static let Weather = "api/weather"
-            static let GetUser = "api/user"
-            static let GetFields = "api/field"
-            static let GetServices = "api/service"
-            static let GetTechnologies = "api/technology"
-            static let GetSuppliers = "api/supplier"
-            static let FieldExpenses = "api/expenses"
-            static let BeetPoint = "api/beet-point"
-            static let ChangePassword = "api/user/change-password"
-            static let RegisterToken = "api/user/register-token"
+            static let Categories = "categories"
+            static let Marker = "markers"
+            static let Organizations = "organizations"
+            static let User = "user"
+
+
+
         }
     }
     struct Settings {
@@ -78,6 +65,10 @@ struct Constants {
     struct GoogleMaps {
         static let APIKey = "AIzaSyAN8gCpx3O-k75hB2OkAx1gGImHRad0msw"
     }
+//    struct Main {
+//        static let MarkerColors = ["": , "": , "": ""]
+//    }
+    
 
 }
 
