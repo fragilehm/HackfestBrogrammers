@@ -46,9 +46,10 @@ struct Constants {
             static let Categories = "categories"
             static let NeedMarkers = "need/categories"
             static let WantMarkers = "want/categories"
-            static let Marker = "markers"
+            static let Marker = "markers/"
             static let Organizations = "organizations"
             static let User = "user"
+
 
 
 
