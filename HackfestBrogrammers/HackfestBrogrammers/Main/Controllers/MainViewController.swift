@@ -38,13 +38,15 @@ class MainViewController: UIViewController {
     }
     @objc func needPressed(_ sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let categoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesViewController")
+        let categoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesViewController") as! CategoriesViewController
+        categoriesVC.isNeed = true
         self.navigationController?.show(categoriesVC, sender: self)
         print("need")
     }
     @objc func wantPressed(_ sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let categoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesViewController")
+        let categoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesViewController") as! CategoriesViewController
+        categoriesVC.isNeed = false
         self.navigationController?.show(categoriesVC, sender: self)
         print("want")
         

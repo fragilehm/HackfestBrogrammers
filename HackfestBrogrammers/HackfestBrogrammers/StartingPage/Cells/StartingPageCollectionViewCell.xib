@@ -21,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7j-sL-cXT">
-                        <rect key="frame" x="0.0" y="461" width="347" height="77"/>
+                        <rect key="frame" x="0.0" y="491" width="347" height="77"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLZ-Lg-dUA">
                                 <rect key="frame" x="0.0" y="12" width="347" height="23"/>
@@ -47,8 +47,8 @@
                             <constraint firstItem="TLZ-Lg-dUA" firstAttribute="top" secondItem="G7j-sL-cXT" secondAttribute="top" constant="12" id="suJ-tG-Z0B"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kve-H3-HvR">
-                        <rect key="frame" x="40" y="50" width="267" height="267"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kve-H3-HvR">
+                        <rect key="frame" x="20" y="50" width="307" height="307"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="kve-H3-HvR" secondAttribute="height" multiplier="1:1" id="DiD-Yk-cwH"/>
                         </constraints>
@@ -56,11 +56,11 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="kve-H3-HvR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="40" id="69b-a1-PGh"/>
-                <constraint firstAttribute="bottom" secondItem="G7j-sL-cXT" secondAttribute="bottom" constant="100" id="QAZ-Bp-Tx5"/>
+                <constraint firstItem="kve-H3-HvR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="69b-a1-PGh"/>
+                <constraint firstAttribute="bottom" secondItem="G7j-sL-cXT" secondAttribute="bottom" constant="70" id="QAZ-Bp-Tx5"/>
                 <constraint firstAttribute="trailing" secondItem="G7j-sL-cXT" secondAttribute="trailing" id="RIO-9c-ZOj"/>
                 <constraint firstItem="G7j-sL-cXT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Roi-0t-N4L"/>
-                <constraint firstAttribute="trailing" secondItem="kve-H3-HvR" secondAttribute="trailing" constant="40" id="aNp-NE-2gh"/>
+                <constraint firstAttribute="trailing" secondItem="kve-H3-HvR" secondAttribute="trailing" constant="20" id="aNp-NE-2gh"/>
                 <constraint firstItem="kve-H3-HvR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="50" id="gFd-XC-ohO"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

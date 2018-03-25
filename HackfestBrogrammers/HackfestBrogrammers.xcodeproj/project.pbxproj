@@ -24,6 +24,8 @@
 		841AA81720665135001F3AC4 /* AddStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841AA81620665135001F3AC4 /* AddStoryViewController.swift */; };
 		841AA81A206658E3001F3AC4 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841AA818206658E3001F3AC4 /* StoryTableViewCell.swift */; };
 		841AA81B206658E3001F3AC4 /* StoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841AA819206658E3001F3AC4 /* StoryTableViewCell.xib */; };
+		8441A9662067341300FDEE98 /* WantMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8441A9652067341300FDEE98 /* WantMapViewController.swift */; };
+		8442177D2067480B004000AD /* MarkerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442177C2067480B004000AD /* MarkerDetailViewController.swift */; };
 		847991EC20665CE000E4261A /* StartingPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847991EA20665CE000E4261A /* StartingPageCollectionViewCell.swift */; };
 		847991ED20665CE000E4261A /* StartingPageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847991EB20665CE000E4261A /* StartingPageCollectionViewCell.xib */; };
 		848B6BDF2066D63B00ADA66D /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B6BDE2066D63B00ADA66D /* CategoriesViewController.swift */; };
@@ -86,6 +88,8 @@
 		841AA81620665135001F3AC4 /* AddStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoryViewController.swift; sourceTree = "<group>"; };
 		841AA818206658E3001F3AC4 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
 		841AA819206658E3001F3AC4 /* StoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryTableViewCell.xib; sourceTree = "<group>"; };
+		8441A9652067341300FDEE98 /* WantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantMapViewController.swift; sourceTree = "<group>"; };
+		8442177C2067480B004000AD /* MarkerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDetailViewController.swift; sourceTree = "<group>"; };
 		847991EA20665CE000E4261A /* StartingPageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartingPageCollectionViewCell.swift; path = HackfestBrogrammers/StartingPage/Cells/StartingPageCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		847991EB20665CE000E4261A /* StartingPageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartingPageCollectionViewCell.xib; path = HackfestBrogrammers/StartingPage/Cells/StartingPageCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		848B6BDE2066D63B00ADA66D /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +312,8 @@
 				84AA1A832065A6AE001FCE47 /* MainViewController.swift */,
 				848B6BDE2066D63B00ADA66D /* CategoriesViewController.swift */,
 				848B6BE42066E4FF00ADA66D /* NeedMapViewController.swift */,
+				8441A9652067341300FDEE98 /* WantMapViewController.swift */,
+				8442177C2067480B004000AD /* MarkerDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -588,8 +594,10 @@
 				84AA1A5320659FBB001FCE47 /* AppDelegate.swift in Sources */,
 				84AA1A902065A744001FCE47 /* MapViewController.swift in Sources */,
 				848B6BE92066E82C00ADA66D /* Category.swift in Sources */,
+				8442177D2067480B004000AD /* MarkerDetailViewController.swift in Sources */,
 				84AA1A7C2065A621001FCE47 /* StartingPageViewController.swift in Sources */,
 				84AA1A702065A105001FCE47 /* Extensions.swift in Sources */,
+				8441A9662067341300FDEE98 /* WantMapViewController.swift in Sources */,
 				84AA1A962065A76F001FCE47 /* SettingsViewController.swift in Sources */,
 				841AA80920663F15001F3AC4 /* ProfileTableViewCell.swift in Sources */,
 				84AA1A6F2065A105001FCE47 /* DataManager.swift in Sources */,

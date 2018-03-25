@@ -12,6 +12,7 @@ class CategoriesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var categories = [Category]()
+    var isNeed = false
     var checked = [Bool]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,10 @@ class CategoriesViewController: UIViewController {
         addNextNavigationItem()
         ServerManager.shared.getCategories(setCategories, error: showErrorAlert)
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "Категории"
     }
     func setCategories(categories: [Category]){
         self.categories = categories
@@ -47,12 +52,21 @@ class CategoriesViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
         else {
-            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let needVC = storyboard.instantiateViewController(withIdentifier: "NeedMapViewController") as! NeedMapViewController
-            needVC.categoryIds = selectedIds
-            self.navigationController?.show(needVC, sender: self)
+            if isNeed {
+                let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                let needVC = storyboard.instantiateViewController(withIdentifier: "NeedMapViewController") as! NeedMapViewController
+                needVC.categoryIds = selectedIds
+                self.navigationController?.show(needVC, sender: self)
+            }
+            else
+            {
+                let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                let needVC = storyboard.instantiateViewController(withIdentifier: "WantMapViewController") as! WantMapViewController
+                needVC.categoryIds = selectedIds
+                self.navigationController?.show(needVC, sender: self)
+            }
+            
         }
-        
         
         //self.navigationController?.popViewController(animated: true)
     }

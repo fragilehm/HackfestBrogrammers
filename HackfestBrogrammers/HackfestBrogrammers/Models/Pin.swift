@@ -12,9 +12,9 @@ struct Pin: Decodable {
     var categories: [Category]
     var status: String
     var description: String
-    var address: String?
-    var latitude: Double?
-    var longitude: Double?
+    var address: String
+    var latitude: String
+    var longitude: String
     var isNeed: Bool?
     var user_id: Int?
     var user_phone: String?
